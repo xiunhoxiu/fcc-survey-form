@@ -1,14 +1,25 @@
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+.required::after {
+  content: ' *'
+}
+
 body {
-    background: linear-gradient(45deg,#ffcccc,#ccffff);
+    background: linear-gradient(45deg,#ffe0e0,#ccffff);
     background-attachment: fixed;
     font-family: Helvetica, sans-serif;
-    min-width: 220px;
-    margin: 50px 50px 50px 50px;
+    min-width: 300px;
+    margin: 50px 50px;
+    font-size: 1rem;
 }
 
 
+
+
 #title {
-  margin-right: 15px;
+  margin-right: 25%;
   margin-left: auto;
 }
 
@@ -49,12 +60,17 @@ body {
   text-align: center;
 }
 
+.form-group {
+  margin: 0 auto 1.25rem auto;
+}
 
 .form {
   background-color: #ffcccc;
-  margin: 15px;
+  position: center;
   border-radius: 25px;
-  padding: 50px
+  padding: 50px;
+  max-width: 900px;
+  margin: 0 auto;
   }
 
 
@@ -63,7 +79,7 @@ body {
 }
 
 
-input[type=text], input[type=email], input[type=number] {
+.form-control {
   width: 100%;
   padding: 12px 30px;
   border: 1px solid #ffcccc;
@@ -74,11 +90,13 @@ input[type=text], input[type=email], input[type=number] {
 
 
 #dropdown {
+  display: inline-block;
   width: 31.5%;
   background-color: #fff;
-  margin: 8px 0;
-  min-width: 130px;
+  padding: 12px 30px;
+  min-width: 200px;
   max-width: 320px;
+  box-sizing: border-box;
 }
 
 
@@ -117,4 +135,40 @@ label {
 p {
   font-size: 16px;
   margin: 20px 5px 5px 0;
+}
+
+
+@media (max-width: 480px) {
+  p {
+    font-size: 12px;
+  }
+
+  #description {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 11px;
+  }
+
+  .form-control {
+    font-size: 11px;
+  }
+
+  #title {
+    font-size: 14px;
+
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    width: 100%;
+    margin: 50px 0px;
+  }
+
+  .form-control {
+    width: 100%;
+    margin: auto 0px;
+  }
 }
